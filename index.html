@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Kings — Quote King or Movie Fan?</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <!-- Crown icon (inline SVG) -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 17L4 8L8 13L12 5L16 13L20 8L22 17H2Z" fill="#f5a623" stroke="#f5a623" stroke-linejoin="round"/>
+        <rect x="2" y="17" width="20" height="2" fill="#f5a623"/>
+      </svg>
+      Movie Kings
+    </a>
+
+    <nav class="navbar__nav" id="mainNav">
+      <a href="index.html" class="navbar__link active">Home</a>
+      <a href="quiz.html" class="navbar__link">Quiz</a>
+      <a href="results.html" class="navbar__link">Results</a>
+    </nav>
+
+    <div class="navbar__lang">
+      <button class="active" onclick="setLang('en')">EN</button>
+      <button onclick="setLang('fr')">FR</button>
+    </div>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Quote <span>King</span> Or Movie Fan?</h1>
+      <p class="hero__subtitle">
+        Test your cinema knowledge by matching<br>iconic movie quotes to their films.
+      </p>
+      <div class="hero__ctas">
+        <button class="btn btn--primary" id="startQuizBtn">Start Quiz</button>
+        <button class="btn btn--outline" id="browseCategoryBtn">Browse by Category</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features">
+    <div class="features__grid container">
+      <div class="features__card">
+        <div class="features__icon features__icon--a">A</div>
+        <h3 class="features__name">Iconic Quotes</h3>
+        <p class="features__desc">Test your knowledge of cinema's most memorable lines.</p>
+      </div>
+      <div class="features__card">
+        <div class="features__icon features__icon--b">B</div>
+        <h3 class="features__name">Track Progress</h3>
+        <p class="features__desc">Watch your score climb as you correctly identify quotes.</p>
+      </div>
+      <div class="features__card">
+        <div class="features__icon features__icon--c">C</div>
+        <h3 class="features__name">Get Feedback</h3>
+        <p class="features__desc">Receive personalized feedback based on your performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERBOARD + QUOTE ===== -->
+  <div class="home-bottom container">
+    <section class="leaderboard">
+      <h2 class="leaderboard__title">Top Players This Week</h2>
+      <ul class="leaderboard__list">
+        <li class="leaderboard__item">
+          <span class="leaderboard__rank">1.</span>
+          <span class="leaderboard__name">SQUEEZI — <strong class="leaderboard__score">20/20</strong></span>
+          <span class="leaderboard__date">MAR 22 | 20:21</span>
+        </li>
+        <li class="leaderboard__item">
+          <span class="leaderboard__rank">2.</span>
+          <span class="leaderboard__name">PERCEPTOR — <strong class="leaderboard__score">20/20</strong></span>
+          <span class="leaderboard__date">MAR 21 | 19:22</span>
+        </li>
+        <li class="leaderboard__item">
+          <span class="leaderboard__rank">3.</span>
+          <span class="leaderboard__name">JORDAN KDI. — <strong class="leaderboard__score">20/20</strong></span>
+          <span class="leaderboard__date">MAR 21 | 15:55</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="quote-teaser">
+      <p class="quote-teaser__text">"May the Force be with you." — Guess the movie!</p>
+      <button class="quote-teaser__reveal" id="revealBtn">Reveal Answer</button>
+      <p class="quote-teaser__answer" id="quoteAnswer" style="display:none; margin-top:12px; font-weight:700;">
+        ⭐ Star Wars (1977)
+      </p>
+    </section>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <p class="footer__brand-name">Movie Kings</p>
+        <p>Ultimate Movie Quiz to challenge your friends.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Navigation</p>
+        <ul class="footer__col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Start Quiz</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Resources</p>
+        <ul class="footer__col-links">
+          <li><a href="https://www.imdb.com" target="_blank">IMDb</a></li>
+          <li><a href="https://www.sight-and-sound.com" target="_blank">Sight &amp; Sound</a></li>
+          <li><a href="https://www.rottentomatoes.com" target="_blank">Rotten Tomatoes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Movie Kings</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL: BROWSE BY CATEGORY ===== -->
+  <div class="modal-overlay" id="categoryModal">
+    <div>
+      <h2 class="modal-title">Choose Your<br>Challenge</h2>
+      <div class="modal-box">
+        <p class="category-modal__subtitle">Select Category</p>
+        <p class="category-modal__desc">Choose a movie category to focus your quiz, or select "All Categories" for a mixed experience.</p>
+        <div class="category-modal__list">
+          <button class="category-modal__option category-modal__option--all selected" data-category="all">All Categories</button>
+          <button class="category-modal__option" data-category="action">Action</button>
+          <button class="category-modal__option" data-category="drama">Drama</button>
+          <button class="category-modal__option" data-category="thriller">Thriller</button>
+          <button class="category-modal__option" data-category="romance">Romance</button>
+          <button class="category-modal__option" data-category="scifi">Sci-Fi</button>
+          <button class="category-modal__option" data-category="fantasy">Fantasy</button>
+        </div>
+        <div class="category-modal__actions">
+          <button class="btn btn--dark" id="cancelCategory">Cancel</button>
+          <button class="btn btn--primary" id="confirmCategory">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL: PROFILE ===== -->
+  <div class="modal-overlay modal-overlay--dark" id="profileModal">
+    <div>
+      <h2 class="modal-title" style="color:#f5a623;">Profile</h2>
+      <div class="modal-box modal-box--dark">
+        <p class="profile-modal__question">Who Are You ?</p>
+        <p class="profile-modal__hint">Are you a king, a queen or...</p>
+
+        <div class="profile-modal__avatars">
+          <!-- Avatar 1: King -->
+          <div class="profile-modal__avatar-wrap" data-avatar="king">
+            <div class="profile-modal__avatar">
+              <svg viewBox="0 0 64 64" width="64" height="64">
+                <circle cx="32" cy="32" r="30" fill="#222"/>
+                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">♛</text>
+              </svg>
+            </div>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">KING</span>
+            <div class="profile-modal__avatar-radio"></div>
+          </div>
+          <!-- Avatar 2: Non-binary (selected) -->
+          <div class="profile-modal__avatar-wrap selected" data-avatar="nonbinary">
+            <div class="profile-modal__avatar">
+              <svg viewBox="0 0 64 64" width="64" height="64">
+                <circle cx="32" cy="32" r="30" fill="#222"/>
+                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">👁</text>
+              </svg>
+            </div>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">NO BINARI</span>
+            <div class="profile-modal__avatar-radio selected"></div>
+          </div>
+          <!-- Avatar 3: Queen -->
+          <div class="profile-modal__avatar-wrap" data-avatar="queen">
+            <div class="profile-modal__avatar">
+              <svg viewBox="0 0 64 64" width="64" height="64">
+                <circle cx="32" cy="32" r="30" fill="#222"/>
+                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">♛</text>
+              </svg>
+            </div>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">QUIZ QUEEN</span>
+            <div class="profile-modal__avatar-radio"></div>
+          </div>
+        </div>
+
+        <div class="profile-modal__nickname">
+          <label for="nickname">Nickname</label>
+          <input type="text" id="nickname" placeholder="Enter your name..." />
+        </div>
+
+        <button class="btn btn--primary" style="width:100%;" id="startQuizFromProfile">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

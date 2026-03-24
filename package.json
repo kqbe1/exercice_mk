@@ -1,25 +1,12 @@
 {
-  "name": "exercice_mk",
+  "name": "movie-kings",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Movie Kings — Quiz App",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch scss/main.scss css/main.css"
+    "sass": "sass --watch scss/main.scss css/main.css",
+    "build": "sass scss/main.scss css/main.css --style compressed"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kqbe1/exercice_mk.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kqbe1/exercice_mk#issues"
-  },
-  "homepage": "https://github.com/kqbe1/exercice_mk#readme",
   "devDependencies": {
-    "sass": "^1.98.0"
+    "sass": "^1.70.0"
   }
 }

@@ -1,0 +1,214 @@
+// ==========================================
+// MOVIE KINGS — Modals (Category + Profile)
+// ==========================================
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($yellow, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &--dark {
+    background-color: rgba($black, 0.92);
+  }
+}
+
+.modal-title {
+  font-family: $font-display;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: $purple;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: $spacing-xl;
+}
+
+.modal-box {
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: $radius-md;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+  &--dark {
+    background-color: $gray-dark;
+    color: $white;
+  }
+}
+
+// Category modal
+.category-modal {
+
+  &__subtitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $purple;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__desc {
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__option {
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    border: 2px solid $gray-light;
+    border-radius: $radius-sm;
+    background: $white;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: border-color 0.15s, background 0.15s;
+    cursor: pointer;
+
+    &:hover,
+    &.selected {
+      border-color: $yellow;
+      background-color: $yellow;
+      color: $black;
+    }
+
+    &--all {
+      background-color: $yellow;
+      border-color: $yellow;
+      color: $black;
+
+      &:hover {
+        background-color: $yellow-dark;
+        border-color: $yellow-dark;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: flex-end;
+
+    .btn {
+      padding: $spacing-sm $spacing-lg;
+    }
+  }
+}
+
+// Profile modal
+.profile-modal {
+
+  &__question {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: $spacing-xs;
+    color: $white;
+  }
+
+  &__hint {
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__avatars {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__avatar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid $gray-mid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+    background: $gray-mid;
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__avatar-radio {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid $gray-mid;
+    background: transparent;
+
+    &.selected {
+      background: $yellow;
+      border-color: $yellow;
+    }
+  }
+
+  &__avatar-wrap.selected &__avatar {
+    border-color: $yellow;
+  }
+
+  &__nickname {
+    margin-bottom: $spacing-xl;
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: $text-muted;
+      margin-bottom: $spacing-sm;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $gray-mid;
+      color: $white;
+      font-size: 1rem;
+      padding: $spacing-sm 0;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: $yellow;
+      }
+    }
+  }
+}

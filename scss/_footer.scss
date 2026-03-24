@@ -1,0 +1,71 @@
+// ==========================================
+// MOVIE KINGS — Footer
+// ==========================================
+
+.footer {
+  background-color: #1c1428;
+  color: $gray-light;
+  padding: $spacing-xl $spacing-xl;
+
+  @include mobile {
+    padding: $spacing-xl $spacing-lg;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: $spacing-xl;
+
+    @include mobile {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__brand p {
+    font-size: 0.85rem;
+    color: $text-muted;
+    margin-top: $spacing-sm;
+    max-width: 200px;
+  }
+
+  &__brand-name {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    color: $yellow;
+    letter-spacing: 1px;
+  }
+
+  &__col-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: $spacing-md;
+  }
+
+  &__col-links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    a {
+      font-size: 0.85rem;
+      color: $gray-light;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-md;
+    border-top: 1px solid $gray-mid;
+    text-align: center;
+    font-size: 0.75rem;
+    color: $text-muted;
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Kings — Results</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .results-page {
+      min-height: calc(100vh - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0d0d0d;
+      padding: 40px 16px;
+    }
+    .results-card {
+      background: #fff;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      border-radius: 12px;
+    }
+    .results-card__title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      color: #5b2d8e;
+      margin-bottom: 8px;
+    }
+    .results-card__score {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #f5a623;
+      margin: 16px 0;
+    }
+    .results-card__feedback {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 32px;
+    }
+    .results-card__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M2 17L4 8L8 13L12 5L16 13L20 8L22 17H2Z" fill="#f5a623" stroke="#f5a623" stroke-linejoin="round"/>
+        <rect x="2" y="17" width="20" height="2" fill="#f5a623"/>
+      </svg>
+      Movie Kings
+    </a>
+    <nav class="navbar__nav">
+      <a href="index.html" class="navbar__link">Home</a>
+      <a href="quiz.html" class="navbar__link">Quiz</a>
+      <a href="results.html" class="navbar__link active">Results</a>
+    </nav>
+  </header>
+
+  <main class="results-page">
+    <div class="results-card">
+      <h1 class="results-card__title">Your Results</h1>
+      <p id="playerGreet" style="color:#888; font-size:0.9rem;"></p>
+      <div class="results-card__score" id="scoreDisplay">— / —</div>
+      <p class="results-card__feedback" id="feedbackText">Loading...</p>
+      <div class="results-card__actions">
+        <a href="quiz.html" class="btn btn--primary">Play Again</a>
+        <a href="index.html" class="btn btn--dark">Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const score = parseInt(sessionStorage.getItem('quizScore') || 0);
+    const total = parseInt(sessionStorage.getItem('quizTotal') || 10);
+    const name = sessionStorage.getItem('playerName') || 'Player';
+
+    document.getElementById('playerGreet').textContent = `Well done, ${name}!`;
+    document.getElementById('scoreDisplay').textContent = `${score} / ${total}`;
+
+    let feedback = '';
+    const pct = score / total;
+    if (pct === 1) feedback = '🏆 Perfect score! You are a true Movie King!';
+    else if (pct >= 0.8) feedback = '⭐ Excellent! You really know your movies.';
+    else if (pct >= 0.6) feedback = '👍 Good job! You\'re a solid movie fan.';
+    else if (pct >= 0.4) feedback = '🎬 Not bad, keep watching more films!';
+    else feedback = '🍿 Time to rewatch some classics!';
+
+    document.getElementById('feedbackText').textContent = feedback;
+  </script>
+
+</body>
+</html>

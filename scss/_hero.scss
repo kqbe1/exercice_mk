@@ -1,0 +1,105 @@
+// ==========================================
+// MOVIE KINGS — Hero Section
+// ==========================================
+
+.hero {
+  @include zigzag-bg($gray-mid);
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    padding: $spacing-xl $spacing-lg;
+    min-height: auto;
+  }
+
+  &__inner {
+    max-width: 600px;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    color: $white;
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: $spacing-lg;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  &__subtitle {
+    color: $gray-light;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: $spacing-xl;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__ctas {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-radius: $radius-sm;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    background-color: $yellow;
+    color: $black;
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $white;
+    border: 2px solid $white;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &--dark {
+    background-color: $black;
+    color: $white;
+    border: 2px solid $black;
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+}
