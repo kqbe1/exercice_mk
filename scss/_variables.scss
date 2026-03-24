@@ -5,18 +5,21 @@
 // Colors
 $black:       #0d0d0d;
 $white:       #ffffff;
-$yellow:      #f5a623;
-$yellow-dark: #d4891a;
-$purple:      #5b2d8e;
-$purple-light:#7c3dbf;
+$yellow:      #F6BA25;
+$yellow-dark: #F6BA25;
+$purple:      #46029E;
+$purple-light:#46029E;
 $gray-dark:   #1a1a1a;
 $gray-mid:    #2c2c2c;
 $gray-light:  #e5e5e5;
 $text-muted:  #888888;
 
 // Typography
-$font-display: 'Bebas Neue', sans-serif;
+$font-display: 'Roboto Serif', serif;
 $font-body:    'DM Sans', sans-serif;
+$font-title: 'Rubik Glitch', cursive;
+$font-title-alt: 'manrope', sans-serif;
+$font-title-2: 'Inter', sans-serif;
 
 // Spacing
 $spacing-xs:  4px;
@@ -49,12 +52,14 @@ $bp-xl:  1280px;
 }
 
 // Zigzag pattern (used in hero)
-@mixin zigzag-bg($color: $gray-mid) {
+@mixin zigzag-bg($color: #000, $zig: #1a1a1a) {
   background-color: $color;
-  background-image:
-    linear-gradient(135deg, $black 25%, transparent 25%) -10px 0,
-    linear-gradient(225deg, $black 25%, transparent 25%) -10px 0,
-    linear-gradient(315deg, $black 25%, transparent 25%),
-    linear-gradient(45deg,  $black 25%, transparent 25%);
-  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(135deg, $zig 25%, transparent 25%),
+    linear-gradient(225deg, $zig 25%, transparent 25%),
+    linear-gradient(45deg, $zig 25%, transparent 25%),
+    linear-gradient(315deg, $zig 25%, transparent 25%);
+  background-position: 40px 0, 40px 0, 0 0, 0 0;
+  background-size: 80px 80px;
+  background-repeat: repeat;
 }

@@ -1,6 +1,15 @@
 // ==========================================
 // MOVIE KINGS — Main (entry point)
 // ==========================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; // Évite tout scroll horizontal parasite
+}
 
 @import 'variables';
 @import 'base';

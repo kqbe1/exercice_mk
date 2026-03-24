@@ -3,7 +3,7 @@
 // ==========================================
 
 .footer {
-  background-color: #1c1428;
+  background-color: #2A2A2A;
   color: $gray-light;
   padding: $spacing-xl $spacing-xl;
 
@@ -22,31 +22,41 @@
   }
 
   &__brand p {
-    font-size: 0.85rem;
-    color: $text-muted;
     margin-top: $spacing-sm;
-    max-width: 200px;
+    max-width: 300px;
   }
 
   &__brand-name {
     font-family: $font-display;
-    font-size: 1.2rem;
+    font-size: 19px;
     color: $yellow;
+    letter-spacing: 1px;
+  }
+    &__brand-desc {
+    font-family: $font-display;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ebebeb;
+    line-height: 26.5px;
     letter-spacing: 1px;
   }
 
   &__col-title {
-    font-size: 0.75rem;
+    color: $yellow;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: $text-muted;
+    color: $yellow;
     margin-bottom: $spacing-md;
   }
 
   &__col-links {
     display: flex;
     flex-direction: column;
+    font-family: $font-title-2;
+    font-size: 14px;
+    line-height: 1;
     gap: $spacing-sm;
 
     a {
