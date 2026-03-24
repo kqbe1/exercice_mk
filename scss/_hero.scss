@@ -5,17 +5,13 @@
 // 1. Le Wrapper Global (Gère le fond continu)
 .landing-wrapper {
   // On applique la mixin ici pour qu'elle couvre tout
-  @include zigzag-bg($black, $gray-mid); 
+  @include zigzag-bg($black, $gray-mid);
   position: relative;
-  min-height: 50vh;
-  //padding-top: $spacing-2xl;
-  //padding-bottom: $spacing-2xl;
 }
+
 .black-header-strip {
-  height: 80px; // Épaisseur de la bande noire supérieure
+  height: 80px;
   background-color: $black;
-  margin-top: -80px; // Compense la hauteur pour que le contenu ne soit pas poussé vers le bas
-  margin-bottom: -80px; // Compense la hauteur pour que le contenu ne soit pas poussé vers le haut
 }
 
 .hero {
@@ -33,7 +29,7 @@
   }
 
   &__inner {
-    max-width: 850px;
+    max-width: 1440px;
   }
 
   &__title {
@@ -44,13 +40,7 @@
     line-height: 1;
     letter-spacing: 2px;
     margin-bottom: $spacing-lg;
-    max-width: none;
-    width: 1980px; 
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-items: center;
-    align-items: center;
+    text-transform: uppercase;
     span {
       color: $yellow;
     }

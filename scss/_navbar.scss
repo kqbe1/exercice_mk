@@ -17,6 +17,7 @@
   }
 
   &__logo {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: $spacing-sm;
@@ -73,7 +74,9 @@
   }
 
   &__lang {
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     gap: $spacing-xs;
 
     button {

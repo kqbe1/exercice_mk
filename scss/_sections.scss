@@ -4,8 +4,8 @@
 
 .features {
   background: linear-gradient(
-    to bottom, 
-    transparent 50%, 
+    to bottom,
+    transparent 50%,
     $black 50%
   );
   padding: 0 $spacing-xl 180px;
@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: $spacing-lg;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 
     @include mobile {
