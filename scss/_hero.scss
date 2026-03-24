@@ -7,7 +7,7 @@
   // On applique la mixin ici pour qu'elle couvre tout
   @include zigzag-bg($black, $gray-mid); 
   position: relative;
-  min-height: 50vh;
+  min-height: 80vh;
   //padding-top: $spacing-2xl;
   //padding-bottom: $spacing-2xl;
 }
@@ -20,7 +20,7 @@
   position: relative;
   padding: $spacing-2xl $spacing-xl;
   text-align: center;
-  min-height: 300px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
