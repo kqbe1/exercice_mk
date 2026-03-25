@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Movie Kings — Quiz App",
   "scripts": {
-    "sass": "sass --watch scss/main.scss css/main.css",
-    "build": "sass scss/main.scss css/main.css --style compressed"
+    "sass": "sass --watch src/styles/main.scss:dist/styles/main.css src/styles/main.scss:dist/styles/main.min.css --style compressed",
+    "build": "sass src/styles/main.scss dist/styles/main.css --source-map"
   },
   "devDependencies": {
     "sass": "^1.70.0"
