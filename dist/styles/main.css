@@ -661,12 +661,10 @@ input {
 .profile-modal__avatar {
   width: 72px;
   height: 72px;
-  border: 3px solid #2c2c2c;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: border-color 0.2s;
-  background: #2c2c2c;
 }
 .profile-modal__avatar img {
   width: 64px;
@@ -685,7 +683,7 @@ input {
   border-color: #F6BA25;
 }
 .profile-modal__avatar-wrap.selected .profile-modal__avatar {
-  border-color: #F6BA25;
+  border: 3px solid #F6BA25;
 }
 .profile-modal__nickname {
   margin-bottom: 40px;

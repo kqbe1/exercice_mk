@@ -150,12 +150,10 @@
   &__avatar {
     width: 72px;
     height: 72px;
-    border: 3px solid $gray-mid;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: border-color 0.2s;
-    background: $gray-mid;
 
     img {
       width: 64px;
@@ -178,7 +176,7 @@
   }
 
   &__avatar-wrap.selected &__avatar {
-    border-color: $yellow;
+    border: 3px solid $yellow;
   }
 
   &__nickname {
