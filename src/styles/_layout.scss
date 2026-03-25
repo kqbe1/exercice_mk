@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@import 'variables';
 
 // ==========================================
 // MOVIE KINGS — Navbar
@@ -29,7 +29,7 @@
     letter-spacing: 1px;
 
     svg, img {
-      width: 28px;
+      width: 23px;
       height: 28px;
     }
   }
