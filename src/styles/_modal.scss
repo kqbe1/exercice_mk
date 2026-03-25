@@ -35,6 +35,17 @@
   margin-bottom: $spacing-xl;
 }
 
+.modal-title-browse {
+  font-family: $font-title;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $purple;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: $spacing-xl;
+}
+
 .modal-box {
   background-color: $white;
   padding: $spacing-xl;

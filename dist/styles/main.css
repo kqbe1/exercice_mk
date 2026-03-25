@@ -567,6 +567,17 @@ input {
   margin-bottom: 40px;
 }
 
+.modal-title-browse {
+  font-family: "Rubik Glitch", cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #46029E;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
 .modal-box {
   background-color: #ffffff;
   padding: 40px;
