@@ -57,7 +57,7 @@
   }
 
   &__link {
-    color: $gray-light;
+    color: $black;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
@@ -65,7 +65,7 @@
 
     &:hover,
     &.active {
-      color: $white;
+      color: $yellow;
     }
 
     &.active {
@@ -95,7 +95,7 @@
       }
 
       &:hover:not(.active) {
-        background-color: $gray-mid;
+        background-color: $yellow;
       }
     }
   }
