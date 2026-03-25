@@ -42,9 +42,9 @@
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 
   &--profile {
-    width: 726px;
+    width: 526px;
     max-width: 726px;
-    height: 790px;
+    height: 600px;
     max-height: 790px;
   }
 
@@ -150,13 +150,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $spacing-sm;
+    padding-top: 32px;
+    gap: $spacing-lg;
     cursor: pointer;
   }
 
   &__avatar {
-    width: 72px;
-    height: 72px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
