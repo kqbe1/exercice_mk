@@ -159,7 +159,7 @@ function endQuiz() {
 
 function confirmStop() {
   if (confirm('Stop the quiz? Your progress will be lost.')) {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   }
 }
 
