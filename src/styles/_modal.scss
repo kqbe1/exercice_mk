@@ -37,12 +37,13 @@
 
 .modal-title-browse {
   font-family: $font-title;
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: 63px;
   font-weight: 400;
   text-transform: uppercase;
   color: $purple;
   text-align: center;
-  letter-spacing: 3px;
+  line-height: 60px;
+  letter-spacing: -1px;
   margin-bottom: $spacing-xl;
 }
 

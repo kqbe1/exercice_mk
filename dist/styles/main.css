@@ -569,12 +569,13 @@ input {
 
 .modal-title-browse {
   font-family: "Rubik Glitch", cursive;
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: 63px;
   font-weight: 400;
   text-transform: uppercase;
   color: #46029E;
   text-align: center;
-  letter-spacing: 3px;
+  line-height: 60px;
+  letter-spacing: -1px;
   margin-bottom: 40px;
 }
 
