@@ -25,9 +25,11 @@
 }
 
 .modal-title {
-  font-family: $font-display;
+  font-family: $font-title;
   font-size: clamp(2rem, 6vw, 3.5rem);
-  color: $purple;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $white;
   text-align: center;
   letter-spacing: 3px;
   margin-bottom: $spacing-xl;
@@ -36,16 +38,17 @@
 .modal-box {
   background-color: $white;
   padding: $spacing-xl;
-  border-radius: $radius-md;
+  border-radius: none;
   width: 100%;
   max-width: 380px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  box-shadow: 6px 6px 0px 1px #ffffff;
 
   &--profile {
     width: 526px;
     max-width: 726px;
-    height: 600px;
+    height: 640px;
     max-height: 790px;
+    border: 5px solid $white;
   }
 
   &--dark {
@@ -118,7 +121,7 @@
     justify-content: flex-end;
 
     .btn {
-      padding: $spacing-sm $spacing-lg;
+    padding: $spacing-sm $spacing-lg;
     }
   }
 }
@@ -127,14 +130,16 @@
 .profile-modal {
 
   &__question {
+    font-family: $font-title-2;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 30px;
+    text-transform: uppercase;
     margin-bottom: $spacing-xs;
     color: $white;
   }
 
   &__hint {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: $text-muted;
     margin-bottom: $spacing-xl;
   }
@@ -167,7 +172,6 @@
       width: 300px;
       height: 300px;
       object-fit: contain;
-    
     }
   }
 
@@ -186,9 +190,9 @@
     }
   }
 
-  &__avatar-wrap.selected &__avatar {
+  //&__avatar-wrap.selected &__avatar {
     //border: 3px solid $yellow;
-  }
+  //}
 
   &__nickname {
     margin-bottom: $spacing-xl;
@@ -199,7 +203,7 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: $text-muted;
+      color: $white;
       margin-bottom: $spacing-sm;
     }
 
@@ -207,7 +211,7 @@
       width: 100%;
       background: transparent;
       border: none;
-      border-bottom: 2px solid $gray-mid;
+      border-bottom: 2px solid $white;
       color: $white;
       font-size: 1rem;
       padding: $spacing-sm 0;

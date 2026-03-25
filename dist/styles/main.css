@@ -232,7 +232,7 @@ input {
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   border-radius: none;
-  box-shadow: 10px 10px 2px 1px #000000;
+  box-shadow: 6px 6px 2px 1px #000000;
   transition: transform 0.15s, box-shadow 0.15s;
   cursor: pointer;
   border: none;
@@ -256,8 +256,8 @@ input {
   border: 2px solid #0d0d0d;
 }
 .btn--outline:hover {
-  background-color: transparent;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0d0d0d;
 }
 .btn--dark {
   background-color: #0d0d0d;
@@ -557,9 +557,11 @@ input {
 }
 
 .modal-title {
-  font-family: "Roboto Serif", serif;
+  font-family: "Rubik Glitch", cursive;
   font-size: clamp(2rem, 6vw, 3.5rem);
-  color: #46029E;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
   text-align: center;
   letter-spacing: 3px;
   margin-bottom: 40px;
@@ -568,16 +570,17 @@ input {
 .modal-box {
   background-color: #ffffff;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: none;
   width: 100%;
   max-width: 380px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 6px 6px 0px 1px #ffffff;
 }
 .modal-box--profile {
   width: 526px;
   max-width: 726px;
-  height: 600px;
+  height: 640px;
   max-height: 790px;
+  border: 5px solid #ffffff;
 }
 .modal-box--dark {
   background-color: #1a1a1a;
@@ -641,13 +644,15 @@ input {
 }
 
 .profile-modal__question {
+  font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 30px;
+  text-transform: uppercase;
   margin-bottom: 4px;
   color: #ffffff;
 }
 .profile-modal__hint {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #888888;
   margin-bottom: 40px;
 }
@@ -701,14 +706,14 @@ input {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #888888;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 .profile-modal__nickname input {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #2c2c2c;
+  border-bottom: 2px solid #ffffff;
   color: #ffffff;
   font-size: 1rem;
   padding: 8px 0;
