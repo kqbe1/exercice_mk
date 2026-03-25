@@ -150,7 +150,6 @@
   &__avatar {
     width: 72px;
     height: 72px;
-    border-radius: 50%;
     border: 3px solid $gray-mid;
     display: flex;
     align-items: center;
@@ -161,8 +160,7 @@
     img {
       width: 64px;
       height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 

@@ -661,7 +661,6 @@ input {
 .profile-modal__avatar {
   width: 72px;
   height: 72px;
-  border-radius: 50%;
   border: 3px solid #2c2c2c;
   display: flex;
   align-items: center;
@@ -672,9 +671,7 @@ input {
 .profile-modal__avatar img {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: contain;
 }
 .profile-modal__avatar-radio {
   width: 12px;
@@ -832,4 +829,6 @@ input {
 .btn--stop:hover {
   background: #ffffff;
   color: #0d0d0d;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
