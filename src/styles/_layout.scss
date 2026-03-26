@@ -1,3 +1,5 @@
+@import 'variables';
+
 // ==========================================
 // MOVIE KINGS — Navbar
 // ==========================================
@@ -27,7 +29,7 @@
     letter-spacing: 1px;
 
     svg, img {
-      width: 28px;
+      width: 23px;
       height: 28px;
     }
   }
@@ -55,7 +57,7 @@
   }
 
   &__link {
-    color: $gray-light;
+    color: $black;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s;
@@ -63,7 +65,7 @@
 
     &:hover,
     &.active {
-      color: $white;
+      color: $yellow;
     }
 
     &.active {
@@ -93,7 +95,7 @@
       }
 
       &:hover:not(.active) {
-        background-color: $gray-mid;
+        background-color: $yellow;
       }
     }
   }

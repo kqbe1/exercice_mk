@@ -77,7 +77,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   border-radius: none;
-  box-shadow: 10px 10px 2px 1px #000000;
+  box-shadow: 6px 6px 2px 1px #000000;
   transition: transform 0.15s, box-shadow 0.15s;
   cursor: pointer;
   border: none;
@@ -104,8 +104,8 @@
     border: 2px solid $black;
 
     &:hover {
-      background-color: transparent;
-      color: $white;
+      background-color: $white;
+      color: $black;
     }
   }
 

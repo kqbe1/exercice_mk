@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Movie Kings — Quote King or Movie Fan?</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="styles/main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +15,17 @@
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <a href="index.html" class="navbar__logo">
-      <!-- Crown icon (inline SVG) -->
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 17L4 8L8 13L12 5L16 13L20 8L22 17H2Z" fill="#f5a623" stroke="#f5a623" stroke-linejoin="round"/>
-        <rect x="2" y="17" width="20" height="2" fill="#f5a623"/>
-      </svg>
+      <svg width="181" height="221" viewBox="0 0 181 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M107.565 143.907C116.051 143.907 122.931 150.81 122.931 159.326C122.931 167.841 116.051 174.744 107.565 174.744C99.078 174.744 92.1982 167.841 92.1982 159.326C92.1982 150.81 99.078 143.907 107.565 143.907Z" fill="#46029E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M58.6143 33.2413L89.6371 3.12187L120.655 33.2413L174.387 0.245935L168.36 102.404L151.103 107.89L147.396 116.091C162.339 126.917 174.106 141.881 181 159.326C166.723 195.452 131.588 221 90.5025 221C49.4159 221 14.2762 195.453 0 159.326C6.76825 142.198 18.231 127.455 32.7886 116.678L31.1829 107.89L11.4447 102.891L4.48186 0L58.6143 33.2413ZM90.5025 128.488C66.9642 128.488 46.2311 140.753 34.3792 159.326C46.2311 177.898 66.9642 190.163 90.5025 190.163C114.037 190.163 134.764 177.898 146.616 159.326C134.764 140.754 114.037 128.488 90.5025 128.488ZM61.8456 62.5728L30.7327 43.4702L33.5039 84.4159L53.7823 89.5554L33.5039 97.2647H145.365L148.542 43.4702L117.429 62.5728L89.6371 35.5903L61.8456 62.5728Z" fill="#46029E"/>
+</svg>
       Movie Kings
     </a>
 
     <nav class="navbar__nav" id="mainNav">
       <a href="index.html" class="navbar__link active">Home</a>
-      <a href="quiz.html" class="navbar__link">Quiz</a>
-      <a href="results.html" class="navbar__link">Results</a>
+      <a href="pages/quiz.html" class="navbar__link">Quiz</a>
+      <a href="pages/results.html" class="navbar__link">Results</a>
     </nav>
 
     <div class="navbar__lang">
@@ -144,7 +143,7 @@
   <!-- ===== MODAL: BROWSE BY CATEGORY ===== -->
   <div class="modal-overlay" id="categoryModal">
     <div>
-      <h2 class="modal-title">Choose Your<br>Challenge</h2>
+      <h2 class="modal-title-browse">Choose Your<br>Challenge</h2>
       <div class="modal-box">
         <p class="category-modal__subtitle">Select Category</p>
         <p class="category-modal__desc">Choose a movie category to focus your quiz, or select "All Categories" for a mixed experience.</p>
@@ -168,8 +167,8 @@
   <!-- ===== MODAL: PROFILE ===== -->
   <div class="modal-overlay modal-overlay--dark" id="profileModal">
     <div>
-      <h2 class="modal-title" style="color:#f5a623;">Profile</h2>
-      <div class="modal-box modal-box--dark">
+      <h2 class="modal-title">Profile</h2>
+      <div class="modal-box modal-box--dark modal-box--profile">
         <p class="profile-modal__question">Who Are You ?</p>
         <p class="profile-modal__hint">Are you a king, a queen or...</p>
 
@@ -177,34 +176,25 @@
           <!-- Avatar 1: King -->
           <div class="profile-modal__avatar-wrap" data-avatar="king">
             <div class="profile-modal__avatar">
-              <svg viewBox="0 0 64 64" width="64" height="64">
-                <circle cx="32" cy="32" r="30" fill="#222"/>
-                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">♛</text>
-              </svg>
+              <img src="images/king.svg" width="64" height="64" alt="King" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">KING</span>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
             <div class="profile-modal__avatar-radio"></div>
           </div>
           <!-- Avatar 2: Non-binary (selected) -->
           <div class="profile-modal__avatar-wrap selected" data-avatar="nonbinary">
             <div class="profile-modal__avatar">
-              <svg viewBox="0 0 64 64" width="64" height="64">
-                <circle cx="32" cy="32" r="30" fill="#222"/>
-                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">👁</text>
-              </svg>
+              <img src="images/binari.svg" width="64" height="64" alt="Non-binary" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">NO BINARI</span>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
             <div class="profile-modal__avatar-radio selected"></div>
           </div>
           <!-- Avatar 3: Queen -->
           <div class="profile-modal__avatar-wrap" data-avatar="queen">
             <div class="profile-modal__avatar">
-              <svg viewBox="0 0 64 64" width="64" height="64">
-                <circle cx="32" cy="32" r="30" fill="#222"/>
-                <text x="32" y="40" text-anchor="middle" font-size="28" fill="#f5a623">♛</text>
-              </svg>
+              <img src="images/queen.svg" width="64" height="64" alt="Queen" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;">QUIZ QUEEN</span>
+            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
             <div class="profile-modal__avatar-radio"></div>
           </div>
         </div>
@@ -218,7 +208,6 @@
       </div>
     </div>
   </div>
-
-  <script src="js/main.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

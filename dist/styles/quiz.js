@@ -154,7 +154,7 @@ function handleSubmit() {
 function endQuiz() {
   sessionStorage.setItem('quizScore', score);
   sessionStorage.setItem('quizTotal', questions.length);
-  window.location.href = 'results.html';
+  window.location.href = 'pages/results.html';
 }
 
 function confirmStop() {
