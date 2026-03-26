@@ -44,6 +44,11 @@
     span {
       color: $yellow;
     }
+
+    @include mobile {
+      font-size: clamp(2rem, 10vw, 3rem);
+      letter-spacing: 1px;
+    }
   }
 
   &__subtitle {
@@ -56,6 +61,11 @@
     max-width: none;
     margin-left: auto;
     margin-right: auto;
+
+    @include mobile {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
   }
 
   &__ctas {

@@ -204,6 +204,12 @@ input {
 .hero__title span {
   color: #F6BA25;
 }
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 1px;
+  }
+}
 .hero__subtitle {
   font-family: font-display;
   font-weight: 300;
@@ -214,6 +220,12 @@ input {
   max-width: none;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 767px) {
+  .hero__subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 }
 .hero__ctas {
   display: flex;
@@ -407,7 +419,8 @@ input {
   background-color: #ffffff;
   border-left: 1px solid #e5e5e5;
   padding: 64px 40px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -421,6 +434,7 @@ input {
     padding: 40px 24px;
     border-left: none;
     border-top: 1px solid #e5e5e5;
+    max-width: 100%;
   }
 }
 .quote-teaser__text {
@@ -452,15 +466,10 @@ input {
 
 .separator {
   height: 24px;
-  width: 100vw;
+  width: 100%;
   display: block;
   line-height: 0;
-  margin-left: calc(50% - 50vw);
-}
-.separator body {
-  margin: 0;
-}
-.separator {
+  overflow: hidden;
   background: repeating-linear-gradient(-45deg, #f5a800 0px, #f5a800 40px, #ffb800 40px, #ffb800 80px);
 }
 
@@ -543,10 +552,12 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
   z-index: 200;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s;
+  overflow-y: auto;
 }
 .modal-overlay.is-visible {
   opacity: 1;
@@ -578,6 +589,12 @@ input {
   letter-spacing: -1px;
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .modal-title-browse {
+    font-size: clamp(2rem, 12vw, 3.5rem);
+    line-height: 1;
+  }
+}
 
 .modal-box {
   background-color: #ffffff;
@@ -589,10 +606,10 @@ input {
   border: 4px solid #000;
 }
 .modal-box--profile {
-  width: 526px;
-  max-width: 726px;
-  height: 640px;
-  max-height: 790px;
+  width: 100%;
+  max-width: 526px;
+  max-height: 90vh;
+  overflow-y: auto;
   border: 5px solid #ffffff;
 }
 .modal-box--dark {
@@ -696,17 +713,27 @@ input {
   cursor: pointer;
 }
 .profile-modal__avatar {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: border-color 0.2s;
 }
 .profile-modal__avatar img {
-  width: 300px;
-  height: 300px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
+}
+@media (max-width: 767px) {
+  .profile-modal__avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .profile-modal__avatar img {
+    width: 60px;
+    height: 60px;
+  }
 }
 .profile-modal__avatar-radio {
   width: 8px;
@@ -761,6 +788,11 @@ input {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 767px) {
+  .quiz-top {
+    padding: 16px 16px;
+  }
+}
 
 .quiz-body {
   background-color: #F6BA25;
@@ -775,6 +807,11 @@ input {
   align-items: center;
   justify-content: flex-start;
   padding: 40px 24px 64px;
+}
+@media (max-width: 767px) {
+  .quiz-body {
+    padding: 24px 16px 40px;
+  }
 }
 
 .quiz-progress {
@@ -828,6 +865,11 @@ input {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .quiz-card__options {
+    grid-template-columns: 1fr;
+  }
 }
 .quiz-card__option {
   position: relative;
