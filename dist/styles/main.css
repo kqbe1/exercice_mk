@@ -54,28 +54,30 @@ input {
 
 .navbar {
   background-color: #ffffff;
-  padding: 16px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 100;
 }
-@media (max-width: 767px) {
-  .navbar {
-    padding: 16px 24px;
-  }
+.navbar__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 .navbar__logo {
   flex: 1;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: #0d0d0d;
   font-family: "Roboto Serif", serif;
   font-size: 1.4rem;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 .navbar__logo svg, .navbar__logo img {
   width: 23px;
@@ -599,7 +601,7 @@ input {
   inset: 0;
   background-color: rgba(246, 186, 37, 0.99);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
   z-index: 200;
@@ -613,11 +615,11 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 @media (max-width: 767px) {
   .modal-overlay {
     padding: 16px;
-    align-items: center;
   }
 }
 .modal-overlay.is-visible {
@@ -751,15 +753,6 @@ input {
   border-color: #F6BA25;
   background-color: #F6BA25;
   color: #0d0d0d;
-}
-.category-modal__option--all {
-  background-color: #F6BA25;
-  border-color: #F6BA25;
-  color: #0d0d0d;
-}
-.category-modal__option--all:hover {
-  background-color: #dba31a;
-  border-color: #dba31a;
 }
 .category-modal__actions {
   display: flex;

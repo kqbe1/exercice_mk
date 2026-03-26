@@ -68,9 +68,13 @@ if (confirmCategory) {
 }
 
 // Category option selection
-document.querySelectorAll('.category-modal__option').forEach(btn => {
+const categoryOptions = document.querySelectorAll('.category-modal__option');
+const defaultOption = document.querySelector('.category-modal__option--all');
+if (defaultOption) defaultOption.classList.add('selected');
+
+categoryOptions.forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.category-modal__option').forEach(b => b.classList.remove('selected'));
+    categoryOptions.forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
   });
 });
