@@ -648,8 +648,8 @@ input {
   color: #0d0d0d;
 }
 .category-modal__option--all:hover {
-  background-color: #F6BA25;
-  border-color: #F6BA25;
+  background-color: #dba31a;
+  border-color: #dba31a;
 }
 .category-modal__actions {
   display: flex;
@@ -706,8 +706,7 @@ input {
 .profile-modal__avatar img {
   width: 300px;
   height: 300px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .profile-modal__avatar-radio {
   width: 8px;
@@ -750,20 +749,37 @@ input {
 
 .quiz-page {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #F6BA25;
-  background-image: linear-gradient(135deg, #F6BA25 25%, transparent 25%) -10px 0, linear-gradient(225deg, #F6BA25 25%, transparent 25%) -10px 0, linear-gradient(315deg, #F6BA25 25%, transparent 25%), linear-gradient(45deg, #F6BA25 25%, transparent 25%);
-  background-size: 20px 20px;
+}
+
+.quiz-top {
+  width: 100%;
+  background-color: #F6BA25;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-body {
+  background-color: #F6BA25;
+  background-image: linear-gradient(135deg, #dba31a 25%, transparent 25%), linear-gradient(225deg, #dba31a 25%, transparent 25%), linear-gradient(45deg, #dba31a 25%, transparent 25%), linear-gradient(315deg, #dba31a 25%, transparent 25%);
+  background-position: 40px 0, 40px 0, 0 0, 0 0;
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 40px 24px;
+  padding: 40px 24px 64px;
 }
 
 .quiz-progress {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: 40px;
+  max-width: 650px;
 }
 .quiz-progress__label {
   display: flex;
@@ -777,72 +793,143 @@ input {
 }
 .quiz-progress__bar {
   width: 100%;
-  height: 6px;
-  background: rgba(13, 13, 13, 0.2);
-  border-radius: 3px;
+  height: 12px;
+  background: #ffffff;
+  border: 2px solid #0d0d0d;
+  border-radius: 0;
   overflow: hidden;
 }
 .quiz-progress__fill {
   height: 100%;
   background: #0d0d0d;
-  border-radius: 3px;
+  border-radius: 0;
   transition: width 0.4s ease;
 }
 
 .quiz-card {
   background-color: #ffffff;
   padding: 40px;
-  border-radius: 16px;
+  border-radius: 8px;
+  border: 2px solid #0d0d0d;
+  box-shadow: 6px 6px 0 #0d0d0d;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  max-width: 650px;
 }
 .quiz-card__quote {
   font-style: italic;
   font-size: 1.1rem;
-  color: #0d0d0d;
+  color: #46029E;
   margin-bottom: 40px;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
 }
 .quiz-card__options {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-bottom: 40px;
 }
 .quiz-card__option {
-  width: 100%;
-  padding: 16px 24px;
-  border: 2px solid #e5e5e5;
+  position: relative;
+  padding: 16px;
+  border: 2px solid #0d0d0d;
   border-radius: 4px;
   background: #ffffff;
   text-align: left;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: border-color 0.15s, background 0.15s;
   cursor: pointer;
+  box-shadow: 3px 3px 0 #0d0d0d;
+  transition: box-shadow 0.1s, transform 0.1s, border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 80px;
 }
-.quiz-card__option:hover {
-  border-color: #F6BA25;
-  background-color: rgba(246, 186, 37, 0.08);
+.quiz-card__option:hover:not(:disabled) {
+  box-shadow: 5px 5px 0 #0d0d0d;
+  background-color: rgba(246, 186, 37, 0.12);
 }
 .quiz-card__option.selected {
-  border-color: #0d0d0d;
-  background-color: #0d0d0d;
-  color: #ffffff;
+  border-color: #F6BA25;
+  background-color: #F6BA25;
+  box-shadow: 3px 3px 0 #0d0d0d;
+}
+.quiz-card__option.selected .quiz-card__option-title {
+  color: #0d0d0d;
+}
+.quiz-card__option.selected .quiz-card__option-director,
+.quiz-card__option.selected .quiz-card__option-year {
+  color: rgba(13, 13, 13, 0.65);
 }
 .quiz-card__option.correct {
   border-color: #27ae60;
   background-color: #27ae60;
+  box-shadow: 3px 3px 0 rgb(24.9929577465, 111.5070422535, 61.5211267606);
+}
+.quiz-card__option.correct .quiz-card__option-title {
   color: #ffffff;
 }
+.quiz-card__option.correct .quiz-card__option-director,
+.quiz-card__option.correct .quiz-card__option-year {
+  color: rgba(255, 255, 255, 0.85);
+}
+.quiz-card__option.correct-missed {
+  border-color: #27ae60;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 0 #27ae60;
+}
+.quiz-card__option.correct-missed .quiz-card__option-title {
+  color: #27ae60;
+}
+.quiz-card__option.correct-missed .quiz-card__option-director,
+.quiz-card__option.correct-missed .quiz-card__option-year {
+  color: #27ae60;
+}
+.quiz-card__option.correct-missed .quiz-card__option-icon {
+  color: #27ae60;
+}
 .quiz-card__option.wrong {
-  border-color: #e74c3c;
-  background-color: #e74c3c;
-  color: #ffffff;
+  border-color: #0d0d0d;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 0 #0d0d0d;
+}
+.quiz-card__option.wrong .quiz-card__option-title {
+  color: #e74c3c;
+}
+.quiz-card__option.wrong .quiz-card__option-director,
+.quiz-card__option.wrong .quiz-card__option-year {
+  color: #888888;
+}
+.quiz-card__option.wrong .quiz-card__option-icon {
+  color: #e74c3c;
+}
+.quiz-card__option:disabled {
+  cursor: default;
+}
+.quiz-card__option-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #0d0d0d;
+}
+.quiz-card__option-director {
+  display: block;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #888888;
+}
+.quiz-card__option-year {
+  display: block;
+  font-size: 0.72rem;
+  color: #46029E;
+}
+.quiz-card__option-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1;
 }
 .quiz-card__footer {
   display: flex;
@@ -851,8 +938,8 @@ input {
 
 .btn--stop {
   background: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid #0d0d0d;
+  color: #0d0d0d;
   padding: 4px 24px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -862,6 +949,8 @@ input {
   transition: background 0.2s, color 0.2s;
 }
 .btn--stop:hover {
-  background: #ffffff;
-  color: #0d0d0d;
-}/*# sourceMappingURL=main.css.map */
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=main.css.map */

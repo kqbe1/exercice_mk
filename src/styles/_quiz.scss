@@ -4,24 +4,35 @@
 
 .quiz-page {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: $yellow;
-  background-image:
-    linear-gradient(135deg, $yellow-dark 25%, transparent 25%) -10px 0,
-    linear-gradient(225deg, $yellow-dark 25%, transparent 25%) -10px 0,
-    linear-gradient(315deg, $yellow-dark 25%, transparent 25%),
-    linear-gradient(45deg,  $yellow-dark 25%, transparent 25%);
-  background-size: 20px 20px;
+}
+
+// Bande jaune unie — progress bar
+.quiz-top {
+  width: 100%;
+  background-color: $yellow;
+  padding: $spacing-lg $spacing-xl;
+  display: flex;
+  justify-content: center;
+}
+
+// Zone principale — zigzag jaune
+.quiz-body {
+  @include zigzag-bg($yellow, $yellow-zig);
+  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: $spacing-xl $spacing-lg;
+  padding: $spacing-xl $spacing-lg $spacing-2xl;
 }
 
 .quiz-progress {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: $spacing-xl;
+  max-width: 650px;
 
   &__label {
     display: flex;
@@ -36,16 +47,17 @@
 
   &__bar {
     width: 100%;
-    height: 6px;
-    background: rgba($black, 0.2);
-    border-radius: 3px;
+    height: 12px;
+    background: $white;
+    border: 2px solid $black;
+    border-radius: 0;
     overflow: hidden;
   }
 
   &__fill {
     height: 100%;
     background: $black;
-    border-radius: 3px;
+    border-radius: 0;
     transition: width 0.4s ease;
   }
 }
@@ -53,63 +65,128 @@
 .quiz-card {
   background-color: $white;
   padding: $spacing-xl;
-  border-radius: $radius-lg;
+  border-radius: $radius-md;
+  border: 2px solid $black;
+  box-shadow: 6px 6px 0 $black;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  max-width: 650px;
 
   &__quote {
     font-style: italic;
     font-size: 1.1rem;
-    color: $black;
+    color: $purple;
     margin-bottom: $spacing-xl;
-    text-align: center;
+    text-align: left;
     line-height: 1.5;
   }
 
   &__options {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: $spacing-sm;
     margin-bottom: $spacing-xl;
   }
 
   &__option {
-    width: 100%;
-    padding: $spacing-md $spacing-lg;
-    border: 2px solid $gray-light;
+    position: relative;
+    padding: $spacing-md;
+    border: 2px solid $black;
     border-radius: $radius-sm;
     background: $white;
     text-align: left;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: border-color 0.15s, background 0.15s;
     cursor: pointer;
+    box-shadow: 3px 3px 0 $black;
+    transition: box-shadow 0.1s, transform 0.1s, border-color 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-height: 80px;
 
-    &:hover {
-      border-color: $yellow;
-      background-color: rgba($yellow, 0.08);
+    &:hover:not(:disabled) {
+      box-shadow: 5px 5px 0 $black;
+      background-color: rgba($yellow, 0.12);
     }
 
     &.selected {
-      border-color: $black;
-      background-color: $black;
-      color: $white;
+      border-color: $yellow;
+      background-color: $yellow;
+      box-shadow: 3px 3px 0 $black;
+
+      .quiz-card__option-title   { color: $black; }
+      .quiz-card__option-director,
+      .quiz-card__option-year    { color: rgba($black, 0.65); }
     }
 
+    // Bonne réponse choisie — fond vert, pas d'icône
     &.correct {
       border-color: #27ae60;
       background-color: #27ae60;
-      color: $white;
+      box-shadow: 3px 3px 0 darken(#27ae60, 15%);
+
+      .quiz-card__option-title   { color: $white; }
+      .quiz-card__option-director,
+      .quiz-card__option-year    { color: rgba($white, 0.85); }
     }
 
-    &.wrong {
-      border-color: #e74c3c;
-      background-color: #e74c3c;
-      color: $white;
+    // Bonne réponse non choisie — fond blanc, bordure + texte + ✓ verts
+    &.correct-missed {
+      border-color: #27ae60;
+      background-color: $white;
+      box-shadow: 3px 3px 0 #27ae60;
+
+      .quiz-card__option-title   { color: #27ae60; }
+      .quiz-card__option-director,
+      .quiz-card__option-year    { color: #27ae60; }
+
+      .quiz-card__option-icon { color: #27ae60; }
     }
+
+    // Mauvaise réponse choisie — fond blanc, titre + ✗ rouges
+    &.wrong {
+      border-color: $black;
+      background-color: $white;
+      box-shadow: 3px 3px 0 $black;
+
+      .quiz-card__option-title   { color: #e74c3c; }
+      .quiz-card__option-director,
+      .quiz-card__option-year    { color: $text-muted; }
+
+      .quiz-card__option-icon { color: #e74c3c; }
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+
+  &__option-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: $black;
+  }
+
+  &__option-director {
+    display: block;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: $text-muted;
+  }
+
+  &__option-year {
+    display: block;
+    font-size: 0.72rem;
+    color: $purple;
+  }
+
+  &__option-icon {
+    position: absolute;
+    bottom: $spacing-sm;
+    right: $spacing-sm;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 1;
   }
 
   &__footer {
@@ -121,8 +198,8 @@
 // Stop quiz navbar button
 .btn--stop {
   background: transparent;
-  border: 2px solid $white;
-  color: $white;
+  border: 2px solid $black;
+  color: $black;
   padding: $spacing-xs $spacing-lg;
   font-size: 0.8rem;
   font-weight: 700;
@@ -132,7 +209,7 @@
   transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background: $white;
-    color: $black;
+    background: $black;
+    color: $white;
   }
 }
