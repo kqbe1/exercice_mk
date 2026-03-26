@@ -801,7 +801,7 @@ input {
 }
 .quiz-progress__fill {
   height: 100%;
-  background: #0d0d0d;
+  background: #F6BA25;
   border-radius: 0;
   transition: width 0.4s ease;
 }
@@ -809,7 +809,7 @@ input {
 .quiz-card {
   background-color: #ffffff;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 0;
   border: 2px solid #0d0d0d;
   box-shadow: 6px 6px 0 #0d0d0d;
   width: 100%;
@@ -842,7 +842,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  min-height: 80px;
+  min-height: 110px;
 }
 .quiz-card__option:hover:not(:disabled) {
   box-shadow: 5px 5px 0 #0d0d0d;
@@ -907,7 +907,7 @@ input {
 }
 .quiz-card__option-title {
   display: block;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.3px;
   color: #0d0d0d;
