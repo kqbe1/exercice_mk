@@ -105,10 +105,10 @@ const questions = [
   {
     quote: '"I am your father."',
     options: [
-      { title: 'Star Wars: A New Hope',              director: 'George Lucas',    year: 1977 },
-      { title: 'Star Wars: The Empire Strikes Back', director: 'Irvin Kershner', year: 1980 },
-      { title: 'Star Wars: Return of the Jedi',      director: 'Richard Marquand',year: 1983 },
-      { title: 'Star Wars: Revenge of the Sith',     director: 'George Lucas',    year: 2005 }
+      { title: 'Star Wars: A New Hope',              director: 'George Lucas',     year: 1977 },
+      { title: 'Star Wars: The Empire Strikes Back', director: 'Irvin Kershner',  year: 1980 },
+      { title: 'Star Wars: Return of the Jedi',      director: 'Richard Marquand', year: 1983 },
+      { title: 'Star Wars: Revenge of the Sith',     director: 'George Lucas',     year: 2005 }
     ],
     answer: 'Star Wars: The Empire Strikes Back',
     category: 'scifi'

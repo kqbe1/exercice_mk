@@ -838,7 +838,7 @@ input {
   text-align: left;
   cursor: pointer;
   box-shadow: 3px 3px 0 #0d0d0d;
-  transition: box-shadow 0.1s, transform 0.1s, border-color 0.15s, background 0.15s;
+  transition: box-shadow 0.1s, border-color 0.15s, background 0.15s;
   display: flex;
   flex-direction: column;
   gap: 3px;
