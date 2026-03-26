@@ -1,6 +1,16 @@
 // ==========================================
 // MOVIE KINGS — Main (entry point)
 // ==========================================
+
+@use 'variables';
+@use 'normalize';
+@use 'layout';
+@use 'hero';
+@use 'sections';
+@use 'footer';
+@use 'modal';
+@use 'quiz';
+
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +20,3 @@
 body {
   overflow-x: hidden; // Évite tout scroll horizontal parasite
 }
-
-@import 'variables';
-@import 'normalize';
-@import 'layout';
-@import 'hero';
-@import 'sections';
-@import 'footer';
-@import 'modal';
-@import 'quiz';

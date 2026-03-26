@@ -2,6 +2,8 @@
 // MOVIE KINGS — Hero Section
 // ==========================================
 
+@use 'variables' as *;
+
 // 1. Le Wrapper Global (Gère le fond continu)
 .landing-wrapper {
   // On applique la mixin ici pour qu'elle couvre tout

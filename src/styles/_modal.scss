@@ -2,6 +2,8 @@
 // MOVIE KINGS — Modals (Category + Profile)
 // ==========================================
 
+@use 'variables' as *;
+
 .modal-overlay {
   position: fixed;
   inset: 0;

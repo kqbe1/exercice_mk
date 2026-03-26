@@ -2,6 +2,9 @@
 // MOVIE KINGS — Quiz Page
 // ==========================================
 
+@use 'variables' as *;
+@use 'sass:color';
+
 .quiz-page {
   min-height: 100vh;
   display: flex;
@@ -133,7 +136,7 @@
     &.correct {
       border-color: #27ae60;
       background-color: #27ae60;
-      box-shadow: 3px 3px 0 darken(#27ae60, 15%);
+      box-shadow: 3px 3px 0 color.adjust(#27ae60, $lightness: -15%);
 
       .quiz-card__option-title   { color: $white; }
       .quiz-card__option-director,

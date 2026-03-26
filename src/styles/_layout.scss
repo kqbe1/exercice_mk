@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 // ==========================================
 // MOVIE KINGS — Navbar
@@ -113,9 +113,12 @@
   }
 
   &__lang {
-    flex: 1;
+    // Desktop : sorti du flux flex, ancré à droite de la navbar
+    position: absolute;
+    right: $spacing-xl;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: flex-end;
     gap: $spacing-xs;
 
     button {
@@ -137,19 +140,38 @@
     }
 
     @include mobile {
+      // Dans le dropdown : repositionné dans le flux normal
+      position: static;
+      transform: none;
       display: none;
+
+      button {
+        color: $white;
+
+        &.active {
+          background-color: $yellow;
+          color: $black;
+        }
+
+        &:hover:not(.active) {
+          background-color: rgba($yellow, 0.2);
+        }
+      }
     }
   }
 
   &__hamburger {
-    display: none;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
     color: $black;
     font-size: 1.5rem;
     padding: $spacing-xs;
     line-height: 1;
 
     @include mobile {
-      display: block;
+      visibility: visible;
     }
   }
 }

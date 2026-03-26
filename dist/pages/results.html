@@ -58,11 +58,16 @@
 </svg>
       Movie Kings
     </a>
-    <nav class="navbar__nav">
+    <nav class="navbar__nav" id="mainNav">
       <a href="../index.html" class="navbar__link">Home</a>
       <a href="quiz.html" class="navbar__link">Quiz</a>
       <a href="results.html" class="navbar__link active">Results</a>
+      <div class="navbar__lang">
+        <button class="active" onclick="setLang('en')">EN</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
     </nav>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </header>
 
   <main class="results-page">
@@ -96,6 +101,7 @@
 
     document.getElementById('feedbackText').textContent = feedback;
   </script>
+  <script src="../scripts/main.js"></script>
   <script src="../scripts/quiz.js"></script>
 </body>
 </html>
