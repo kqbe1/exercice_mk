@@ -45,6 +45,7 @@
       &.is-open {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         position: absolute;
         top: 100%;
         left: 0;
@@ -52,6 +53,42 @@
         background: $black;
         padding: $spacing-lg;
         gap: $spacing-md;
+        z-index: 99;
+
+        .navbar__link {
+          color: $white;
+          width: 100%;
+
+          &.active {
+            background-color: rgba($white, 0.1);
+            color: $white;
+          }
+
+          &:hover {
+            color: $yellow;
+          }
+        }
+
+        .navbar__lang {
+          display: flex;
+          margin-left: 0;
+          padding-top: $spacing-md;
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          width: 100%;
+
+          button {
+            color: $white;
+
+            &.active {
+              background-color: $yellow;
+              color: $black;
+            }
+
+            &:hover:not(.active) {
+              background-color: rgba($yellow, 0.2);
+            }
+          }
+        }
       }
     }
   }
@@ -98,12 +135,18 @@
         background-color: $yellow;
       }
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__hamburger {
     display: none;
-    color: $white;
+    color: $black;
     font-size: 1.5rem;
+    padding: $spacing-xs;
+    line-height: 1;
 
     @include mobile {
       display: block;

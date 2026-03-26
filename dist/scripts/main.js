@@ -7,8 +7,17 @@ const hamburger = document.getElementById('hamburger');
 const mainNav = document.getElementById('mainNav');
 
 if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    mainNav.classList.toggle('is-open');
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = mainNav.classList.toggle('is-open');
+    hamburger.innerHTML = isOpen ? '&times;' : '&#9776;';
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('is-open') && !mainNav.contains(e.target)) {
+      mainNav.classList.remove('is-open');
+      hamburger.innerHTML = '&#9776;';
+    }
   });
 }
 
@@ -97,7 +106,7 @@ if (startQuizFromProfile) {
     }
     // Save to sessionStorage
     sessionStorage.setItem('playerName', nickname);
-    window.location.href = 'pages/quiz.html';
+    window.location.href = 'quiz.html';
   });
 }
 
