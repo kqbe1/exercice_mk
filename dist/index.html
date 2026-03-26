@@ -101,7 +101,7 @@
     <section class="quote-teaser">
       <p class="quote-teaser__text">"May the Force be with you." — Guess the movie!</p>
       <button class="quote-teaser__reveal" id="revealBtn">Reveal Answer</button>
-      <p class="quote-teaser__answer" id="quoteAnswer" style="display:none; margin-top:12px; font-weight:700;">
+      <p class="quote-teaser__answer" id="quoteAnswer">
         ⭐ Star Wars (1977)
       </p>
     </section>
@@ -177,7 +177,7 @@
             <div class="profile-modal__avatar">
               <img src="images/king.svg" width="64" height="64" alt="King" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
+            <span class="profile-modal__avatar-label"></span>
             <div class="profile-modal__avatar-radio"></div>
           </div>
           <!-- Avatar 2: Non-binary (selected) -->
@@ -185,7 +185,7 @@
             <div class="profile-modal__avatar">
               <img src="images/binari.svg" width="64" height="64" alt="Non-binary" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
+            <span class="profile-modal__avatar-label"></span>
             <div class="profile-modal__avatar-radio selected"></div>
           </div>
           <!-- Avatar 3: Queen -->
@@ -193,7 +193,7 @@
             <div class="profile-modal__avatar">
               <img src="images/queen.svg" width="64" height="64" alt="Queen" />
             </div>
-            <span style="font-size:0.7rem;color:#888;letter-spacing:1px;"></span>
+            <span class="profile-modal__avatar-label"></span>
             <div class="profile-modal__avatar-radio"></div>
           </div>
         </div>
@@ -203,7 +203,7 @@
           <input type="text" id="nickname" placeholder="Enter your name..." />
         </div>
 
-        <button class="btn btn--primary" style="width:100%;" id="startQuizFromProfile">Start Quiz</button>
+        <button class="btn btn--primary" id="startQuizFromProfile">Start Quiz</button>
       </div>
     </div>
   </div>

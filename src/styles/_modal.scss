@@ -88,6 +88,10 @@
     max-height: 90vh;
     overflow-y: auto;
     border: 5px solid $white;
+
+    .btn--primary {
+      width: 100%;
+    }
   }
 
   &--dark {
@@ -259,6 +263,12 @@
       height: 60px;
       img { width: 60px; height: 60px; }
     }
+  }
+
+  &__avatar-label {
+    font-size: 0.7rem;
+    color: $text-muted;
+    letter-spacing: 1px;
   }
 
   &__avatar-radio {
